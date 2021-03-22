@@ -1,0 +1,35 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+
+	<context:annotation-config />
+
+	<bean id="employeeDAO" class="com.vidvaan.crud.dao.EmployeeDAO"></bean>
+	<bean id="addressDAO" class="com.vidvaan.crud.dao.AddressDAO"></bean>
+	<bean id="departmentDAO" class="com.vidvaan.crud.dao.DepartmentDAO"></bean>
+	<bean id="managerDAO" class="com.vidvaan.crud.dao.ManagerDAO"></bean>
+
+	<!-- <bean id="employeeService"
+		class="com.vidvaan.crud.service.EmployeeService">
+		<property name="employeeDAO" ref="employeeDAO"></property>
+		<property name="addressDAO" ref="addressDAO"></property>
+		<property name="departmentDAO" ref="departmentDAO"></property>
+		<property name="managerDAO" ref="managerDAO"></property>
+	</bean> -->
+	
+	<!-- <bean id="employeeService" class="com.vidvaan.crud.service.EmployeeService" autowire="byName"></bean> -->
+	<!-- <bean id="employeeService" class="com.vidvaan.crud.service.EmployeeService" autowire="byType"></bean> -->
+	<!-- <bean id="employeeService" class="com.vidvaan.crud.service.EmployeeService" autowire="constructor"></bean> -->
+	<bean id="employeeService" class="com.vidvaan.crud.service.EmployeeService"></bean>
+
+	<bean id="employeeController"
+		class="com.vidvaan.crud.controller.EmployeeController">
+		<!-- <property name="employeeService" ref="employeeService"></property> -->
+	</bean>
+</beans>
